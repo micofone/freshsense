@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Scroll reveal
   const revealEls = document.querySelectorAll(".reveal-on-scroll");
 
   if (!("IntersectionObserver" in window) || revealEls.length === 0) {
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     revealEls.forEach((el) => observer.observe(el));
   }
 
-
+  // Hero "live monitoring" animation status cycling
   const statusPill = document.querySelector(".live-status-pill");
   const appCard = document.querySelector(".live-app-card");
   const states = [
@@ -52,10 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
       index = (index + 1) % states.length;
       const state = states[index];
 
-
+      // reset classes
       statusPill.classList.remove("status-ok", "status-warn", "status-alert");
       appCard.classList.remove("is-warning", "is-alert");
 
+      // apply new state
       statusPill.classList.add(state.className);
       if (state.cardClass) {
         appCard.classList.add(state.cardClass);
@@ -64,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 4000);
   }
 
+  // Demo buttons: smooth scroll helpers
   const demoButton = document.getElementById("demo-button");
   const howItWorksButton = document.getElementById("how-it-works-button");
   const getStartedSection = document.getElementById("get-started");
