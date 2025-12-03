@@ -752,22 +752,13 @@ footer {
   }
 
   .testimonials {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
   }
 
   .testimonial-card {
     padding: 1.1rem 1rem;
-  }
-
-  .testimonial-quote {
-    font-size: 0.9rem;
-  }
-
-  .testimonial-card::before {
-    font-size: 3rem;
-    top: -10px;
-    left: 6px;
   }
 
   .hero {
